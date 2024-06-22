@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <script src="./js/login.js" defer></script>
+    <title>Login</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="nav-btn"><a href="./index.html">Home</a></li>
+          <!-- <li class="nav-btn"><a href="./orders.html">Orders</a></li> -->
+          <li class="nav-btn"><a href="./login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="box">
+        <!-- Login box -->
+        <form class="form-login" action="/login/check-login" method="POST">
+          <div class="box-login" id="login">
+            <div class="top-header">
+              <h3>Hello, Again</h3>
+              <small>We are happy to have you back.</small>
+            </div>
+            <div class="input-group">
+              <div class="input-field">
+                <input
+                  type="text"
+                  class="input-box"
+                  id="logEmail"
+                  name="email"
+                  required
+                />
+                <label for="logEmail">Email Address</label>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="input-field">
+                <input
+                  type="password"
+                  class="input-box"
+                  name="password"
+                  id="logPassword"
+                  required
+                />
+                <label for="logPassword">Password</label>
+                <div class="eye-area">
+                  <div class="eye-box" onclick="myLogPassword()">
+                    <i class="fa-regular fa-eye" id="eye"></i>
+                    <i class="fa-regular fa-eye-slash" id="eye-slash"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="remember">
+                <input type="checkbox" id="formCheck" class="check" />
+                <label for="formCheck">Remember me</label>
+              </div>
+              <div class="input-field">
+                <input type="submit" value="Sign In" class="input-submit" />
+              </div>
+              <div class="forgot">
+                <a href="#">Forgot password</a>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- Register -->
+        <form
+          class="form-register"
+          action="/register/add-customer"
+          method="POST"
+        >
+          <div class="box-register" id="register">
+            <div class="top-header">
+              <h3>Sign Up, Now</h3>
+              <small>We are happy to have you with us.</small>
+            </div>
+            <div class="input-group">
+              <div class="input-field">
+                <input
+                  type="text"
+                  class="input-box"
+                  name="firstName"
+                  id="firstName"
+                  required
+                />
+                <label for="firstName">First Name</label>
+              </div>
+              <div class="input-field">
+                <input
+                  type="text"
+                  class="input-box"
+                  name="lastName"
+                  id="lastName"
+                  required
+                />
+                <label for="lastName">Last Name</label>
+              </div>
+              <div class="input-field">
+                <input
+                  type="tel"
+                  class="input-box"
+                  name="Phone"
+                  id="Phone"
+                  pattern="[0-9]*"
+                  required
+                />
+                <label for="Phone">Phone Number</label>
+              </div>
+              <div class="input-field">
+                <input
+                  type="email"
+                  class="input-box"
+                  id="regEmail"
+                  name="email"
+                  required
+                />
+                <label for="email">Email Address</label>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="input-field">
+                <input
+                  type="password"
+                  class="input-box"
+                  name="regPassword"
+                  id="regPassword"
+                  required
+                />
+                <label for="regPassword">Password</label>
+                <div class="eye-area">
+                  <div class="eye-box" onclick="myRegPassword()">
+                    <i class="fa-regular fa-eye" id="eye-2"></i>
+                    <i class="fa-regular fa-eye-slash" id="eye-slash-2"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="remember">
+                <input type="checkbox" id="formCheck-2" class="check" />
+                <label for="formCheck-2">Remember me</label>
+              </div>
+              <div class="input-field">
+                <input type="submit" value="Sign Up" class="input-submit" />
+              </div>
+            </div>
+          </div>
+        </form>
+        <div>
+          <!-- Switch -->
+          <div class="switch">
+            <a class="login" onclick="login()">Login</a>
+            <a class="register" onclick="register()">Register</a>
+            <div class="btn-active" id="btn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer><p>&copy;Created by Elad Atias & Ofir Binder</p></footer>
+  </body>
+</html>

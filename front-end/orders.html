@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/orders.css" />
+    <script src="./js/login.js" defer></script>
+    <script defer src="./js/orders.js"></script>
+    <title>Orders</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="nav-btn"><a href="./index.html">Home</a></li>
+          <li class="nav-btn"><a href="./orders.html">Orders</a></li>
+          <li class="nav-btn"><a href="./login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="box">
+        <!-- Login box -->
+        <form class="form-login" action="/orders/add-queue" method="POST">
+          <div class="box-login" id="login">
+            <div class="top-header">
+              <h3 class="user">Hello, Again</h3>
+              <small>We are happy to have you back.</small>
+            </div>
+            <div class="input-group">
+              <div class="input-field">
+                <label for="day"></label>
+                <input
+                  class="input-queue"
+                  type="date"
+                  id="day"
+                  min="2024-03-01"
+                  name="date"
+                  required
+                />
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="input-field">
+                <label for="hours"> </label>
+                <input
+                  class="input-queue"
+                  type="time"
+                  id="hours"
+                  min="07:00"
+                  max="23:00"
+                  name="hour"
+                  required
+                />
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="input-field options">
+                <label for="service"></label>
+
+                <select
+                  name="service"
+                  id="service"
+                  required
+                  class="input-queue select-services"
+                >
+                  <!-- <option value="Haircut">
+                    <span>Haircut</span> <span>70 NIS</span>
+                  </option>
+                  <option value="Beard haircut">Beard Haircut 50 NIS</option>
+                  <option value="Full treatment">Full Treatment 120 NIS</option> -->
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <div class="input-field">
+                <input
+                  type="submit"
+                  value="Book Appointment"
+                  class="input-submit"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- Register -->
+        <form
+          class="form-register"
+          action="/register/add-customer"
+          method="POST"
+        >
+          <div class="box-register" id="register">
+            <div class="top-header">
+              <h3>Your Queues :</h3>
+              <!-- <small>We are happy to have you with us.</small> -->
+            </div>
+
+            <ul class="list">
+              <li class="header-queues heading">
+                <span>ID</span><span>Date</span><span>Hour</span
+                ><span>Service</span>
+              </li>
+            </ul>
+          </div>
+        </form>
+        <div>
+          <!-- Switch -->
+          <div class="switch">
+            <a class="login" onclick="login()">Add Queue</a>
+            <a class="register" onclick="register()">My Queues</a>
+            <div class="btn-active" id="btn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer><p>&copy;Created by Elad Atias & Ofir Binder</p></footer>
+  </body>
+</html>
